@@ -8,6 +8,7 @@ import Exemplo07Clique from './components/Exercicios/Exemplo07Clique.vue';
 import Exemplo08Teclado from './components/Exercicios/Exemplo08Teclado.vue';
 import Exemplo09Enviar from './components/Exercicios/Exemplo09Enviar.vue';
 import { ref } from 'vue';
+import Card from './components/Exercicios/Card.vue';
 
 import ProductItem from './components/Exercicios/ProductItem.vue';
 
@@ -45,6 +46,8 @@ const product = {
 
 import Exemplo11Emits from './components/Exercicios/Exemplo11Emits.vue'; 
 import Exemplo12Slot from './components/Exercicios/Exemplo12Slot.vue';
+import ButtonComponent from './components/Exercicios/ButtonComponent.vue';
+import Modal from './components/Exercicios/Modal.vue';
 const totalCliques = ref(0);
 function atualizarTotal(Valor) {
   totalCliques.value = Valor;
@@ -62,7 +65,7 @@ function atualizarTotal(Valor) {
   <Exemplo09Enviar />
   <Exemplo10Props />
 
-
+<br></br>
   <!-- ...outros componentes... -->
 
   <UserCard :nome="user.nome" :email="user.email" :idade="user.idade" :telefone="user.telefone" :ativo="user.ativo" />
@@ -88,7 +91,38 @@ function atualizarTotal(Valor) {
       @buy="handleBuy"
     />
   </div>
+
   <p v-if="mensagemCompra">{{ mensagemCompra }}</p>
+
+  <!-- Exercício 13 -->
+    <h2 style="margin-top:2rem">Exercício 13 - Button com Slot</h2>
+    <ButtonComponent>Comprar Agora!</ButtonComponent>
+
+
+    <h2 style="margin-top:2rem">Exercício 14 - Modal com 3 Slots</h2>
+    <Modal>
+      <template #header>
+        <span style="font-size:1.2rem; font-weight:bold;">Olha só! Exemplo de Modal!</span>
+      </template>
+      <div>
+        <p>Este é o conteúdo principal passando por dentro da modal, passado via slot default.</p>
+      </div>
+      <template #footer>
+        <button @click="alert('Fechar!')" style="background:#6366f1;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:6px;">Fechar</button>
+      </template>
+    </Modal>
+
+    <!-- Exemplo Card da bateria Premium DX-722 Azul -->
+    <Card
+      titulo="Bateria Premium DX-722 Azul"
+      descricao="Bateria automotiva de alta performance, 72Ah, cor azul."
+      imagem="https://www.duracellautomotive.com/fileadmin/_processed_/b/2/csm_DX-722_12V_72Ah_720A_0e2e2e2e2e.png"
+    >
+      A Premium DX-722 Azul oferece excelente durabilidade e desempenho para veículos modernos.
+      <template #footer>
+        Garantia de 24 meses.
+      </template>
+    </Card>
 
 
 
