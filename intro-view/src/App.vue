@@ -10,6 +10,7 @@ import Exemplo09Enviar from './components/Exercicios/Exemplo09Enviar.vue';
 import { ref } from 'vue';
 import Card from './components/Exercicios/Card.vue';
 
+
 import ProductItem from './components/Exercicios/ProductItem.vue';
 
 const produtos = [
@@ -115,10 +116,10 @@ function atualizarTotal(Valor) {
     <!-- Exemplo Card da bateria Premium DX-722 Azul -->
     <Card
       titulo="Bateria Premium DX-722 Azul"
-      descricao="Bateria automotiva de alta performance, 72Ah, cor azul."
-      imagem="https://www.duracellautomotive.com/fileadmin/_processed_/b/2/csm_DX-722_12V_72Ah_720A_0e2e2e2e2e.png"
+      descricao="Bateria acústica Premium DX-722, cor azul."
+      imagem="/IMG_20220821_151435566.jpg"
     >
-      A Premium DX-722 Azul oferece excelente durabilidade e desempenho para veículos modernos.
+      A Premium DX-722 Azul oferece excelente durabilidade e desempenho para músicos exigentes.
       <template #footer>
         Garantia de 24 meses.
       </template>

@@ -1,15 +1,13 @@
 <script setup>
 const props = defineProps({
   titulo: String,
-  descricao: String,
-  imagem: String
+  descricao: String
 })
 </script>
 
 <template>
   <div class="card">
     <header class="card-header">
-      <img v-if="imagem" :src="imagem" :alt="titulo" class="card-img" />
       <h3>{{ titulo }}</h3>
       <p class="descricao">{{ descricao }}</p>
     </header>
@@ -39,18 +37,7 @@ const props = defineProps({
   padding: 1.2rem 1.5rem 0.7rem 1.5rem;
   text-align: center;
 }
-.card-img {
-  display: block;
-  margin: 0 auto 0.7rem auto;
-  max-width: 90%;
-  max-height: 180px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-}
+
 .card-header h3 {
   margin: 0 0 0.3rem 0;
   font-size: 1.3rem;
